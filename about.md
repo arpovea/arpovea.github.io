@@ -8,7 +8,7 @@ permalink: /about/
 
 ### Mas Información:
 
-El objetivo principal de este Blog es documentar las prácticas realizadas en el curso y por su puesto compartir y/o ayudar a los demás.
+El objetivo principal de este Blog es documentar las prácticas realizadas en el curso y por supuesto compartir y/o ayudar a los demás.
 
 ### Contacta conmigo:
 
