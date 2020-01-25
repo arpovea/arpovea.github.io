@@ -18,7 +18,7 @@ minima:
   social_links:
     twitter: arpovea
     github:  arpovea
-    rss: rss
+    #rss: rss
     # devto: jekyll
     # dribbble: jekyll
     # facebook: jekyll
