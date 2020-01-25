@@ -13,7 +13,7 @@ layout: default
       {%- if page.modified_date -%}
         ~ 
         <time class="dt-modified" datetime="{{ page.modified_date | date_to_xmlschema }}" itemprop="dateModified">
-          {{ page.modified_date | date: date_format }}
+         {% include date_es.html date=page.date %}
         </time>
       {%- endif -%}
       {%- if page.author -%}
