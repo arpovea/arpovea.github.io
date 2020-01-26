@@ -52,7 +52,11 @@ locale: "es-ES"
 # this and add the path to the pages in order as they should show up
 #header_pages:
 # - about.md
-
+defaults:
+  - scope:
+      path: "_images"
+    values:
+      image: true
 # Build settings
 theme: minima
 
