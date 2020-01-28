@@ -31,6 +31,8 @@ Captura de pantalla correspondiente:
 
 Como se puede observar en las imágenes ambas webs estan alojadas en el servidor `151.101.133.50` con el CNAME(alias del dominio) "unidadeditorial.map.fastly.net".    
 
+***
+
 ## Wireshark
 
 
