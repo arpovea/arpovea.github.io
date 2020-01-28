@@ -14,7 +14,7 @@ Buenas! En esta ocasión vamos a probar un poco el comando dig y el programa Wir
 
 <!--more-->
 
-##DIG    
+## DIG    
 Se va a realizar una petición DNS con el comando dig a las páginas www.marca.com y www.elmundo.es:
 
 ```bash
