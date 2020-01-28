@@ -22,12 +22,14 @@ dig www.marca.com
 ```
 Captura de pantalla correspondiente:    
 ![digwww.marca.com](/_images/digmarca.png)
+![digwww.marca.com]({{ site.url }}{{ site.baseurl }}/_images/digmarca.png){: .align-center }
 
 ```bash
 dig www.elmundo.com
 ```
 Captura de pantalla correspondiente:    
 ![digwww.elmundo.es](/_images/digelmundo.png)
+![digwww.elmundo.es]({{ site.url }}{{ site.baseurl }}/_images/digelmundo.png){: .align-center }
 
 Como se puede observar en las imágenes ambas webs estan alojadas en el servidor `151.101.133.50` con el CNAME(alias del dominio) "unidadeditorial.map.fastly.net".    
 
