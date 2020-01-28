@@ -14,7 +14,7 @@ Buenas! En esta ocasión vamos a probar un poco el comando dig y el programa Wir
 
 <!--more-->
 
-##DIG
+##DIG    
 Se va a realizar una petición DNS con el comando dig a las páginas www.marca.com y www.elmundo.es:
 
 ```bash
@@ -29,7 +29,7 @@ dig www.elmundo.com
 Captura de pantalla correspondiente:    
 ![digwww.elmundo.es](/_images/digelmundo.png)
 
-Como se puede observar en las imágenes ambas webs estan alojadas en el servidor `151.101.133.50` con el CNAME(alias del dominio) "unidadeditorial.map.fastly.net"
+Como se puede observar en las imágenes ambas webs estan alojadas en el servidor `151.101.133.50` con el CNAME(alias del dominio) "unidadeditorial.map.fastly.net".    
 
 ## Wireshark
 
