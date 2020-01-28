@@ -1,7 +1,13 @@
 title: Blog Informático
 author:
-  name: Adrián Rodríguez Povea
-  email: arodriguezpovea@gmail.com
+  name   : "Adrián Rodríguez Povea"
+  avatar : "/_images/logo.PNG"
+  bio    : "Blog Informático"
+  email  : "arodriguezpovea@gmail.com"
+  github : "arpovea"
+  twitter : "arodriguezpovea"
+  location: "Dos Hermanas, Sevilla,ES" # null (default), "absolute or relative url to link to author home"
+  
 description: > # this means to ignore newlines until "show_excerpts:"
   “La tecnología por sí sola no basta. También tenemos que poner el corazón” – Jane Goodall
   
@@ -45,14 +51,7 @@ minima:
     #   instance: example.com
     # - username: jekyll2
     #   instance: example.com
-author:
-  name   : "Adrián Rodríguez Povea"
-  avatar : "/_images/logo.PNG"
-  bio    : "Blog Informático"
-  email  : "arodriguezpovea@gmail.com"
-  github : "arpovea"
-  twitter : "arodriguezpovea"
-  location: "Dos Hermanas, Sevilla,ES" # null (default), "absolute or relative url to link to author home"
+
   
 timezone: Europe/Madrid
 locale: "es-ES"
