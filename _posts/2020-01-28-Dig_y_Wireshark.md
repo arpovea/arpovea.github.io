@@ -32,8 +32,8 @@ Captura de pantalla correspondiente:
 ![digwww.elmundo.es](images/DigyWireshark/digelmundo.png)
 ![digwww.elmundo.es](/_images/digelmundo.png){: .align-center }
 ![ddigwww.elmundo.es](/assets/DigyWireshark/digelmundo.png)
-![digwww.elmundo.es]({{ site.baseurl }}_images/digelmundo.png)
-![digwww.elmundo.es]({{ site.baseurl }}_images/digelmundo.png){: .align-center }
+![digwww.elmundo.es]({{ site.baseurl }}images/digelmundo.png)
+![digwww.elmundo.es]({{ site.baseurl }}assets/digmarca.png){: .align-center }
 ![digwww.elmundo.es](/_images/DigyWireshark/digelmundo.png)
 
 
