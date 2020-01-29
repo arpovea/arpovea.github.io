@@ -22,7 +22,7 @@ dig www.marca.com
 ```
 Captura de pantalla correspondiente:    
 
-![digwww.marca.com](assets/digmarca.png)
+![digwww.marca.com](assets/digmarca.png)    
 
 ```bash
 dig www.elmundo.com
@@ -34,8 +34,8 @@ Captura de pantalla correspondiente:
 ![ddigwww.elmundo.es](/assets/DigyWireshark/digelmundo.png)
 ![digwww.elmundo.es]({{ site.baseurl }}images/digelmundo.png)
 ![digwww.elmundo.es]({{ site.baseurl }}assets/digmarca.png){: .align-center }
-![digwww.elmundo.es](/_images/DigyWireshark/digelmundo.png)
-![]({{ site.baseurl }}images/DigyWireshark/digelmundo.png)
+![digwww.elmundo.es](/_images/DigyWireshark/digelmundo.png)    
+![]({{ site.baseurl }}images/DigyWireshark/digelmundo.png)    
 
 
 
