@@ -22,7 +22,10 @@ dig www.marca.com
 ```
 Captura de pantalla correspondiente:    
 ![digwww.marca.com](/_images/digmarca.png)
-![digwww.marca.com]({{ page.url }}/_images/digmarca.png){: .align-center }
+
+[code lang=text]
+![digwww.marca.com]({{ site.baseurl }}/_images/digmarca.png){: .align-center }
+[/code]
 
 ```bash
 dig www.elmundo.com
