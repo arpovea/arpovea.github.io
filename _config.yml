@@ -9,7 +9,6 @@ author:
   location: "Dos Hermanas, Sevilla,ES" # null (default), "absolute or relative url to link to author home"
 
 baseurl: "/" # the subpath of your site, e.g. /blog/
-url: "https://www.arpovea.github.io" # the base hostname & protocol for your site
 
 description: > # this means to ignore newlines until "show_excerpts:"
   “La tecnología por sí sola no basta. También tenemos que poner el corazón” – Jane Goodall
