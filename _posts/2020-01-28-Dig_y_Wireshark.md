@@ -21,7 +21,7 @@ Se va a realizar una petición DNS con el comando dig a las páginas www.marca.c
 dig www.marca.com
 ```
 Captura de pantalla correspondiente:    
-![digwww.marca.com](/_images/digmarca.png)
+![digwww.marca.com](/assets/DigyWireshark/digmarca.png)
 
 [code lang=text]
 ![digwww.marca.com]({{ site.baseurl }}/_images/digmarca.png)
