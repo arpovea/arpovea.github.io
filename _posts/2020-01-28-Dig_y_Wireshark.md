@@ -22,14 +22,14 @@ dig www.marca.com
 ```
 Captura de pantalla correspondiente:    
 
-![digwww.marca.com](_images/digmarca.png)    
+![digwww.marca.com](/_images/digmarca.png)    
 
 ```bash
 dig www.elmundo.com
 ```
 Captura de pantalla correspondiente:    
 
-![digwww.marca.com](_images/digelmundo.png)    
+![digwww.marca.com](/_images/digelmundo.png)    
 
 
 
