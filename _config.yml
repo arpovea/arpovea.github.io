@@ -55,6 +55,11 @@ url: "https://www.arpovea.github.io" # the base hostname & protocol for your sit
     # - username: jekyll2
     #   instance: example.com
 
+defaults:
+  - scope:
+      path: "_images"
+    values:
+      image: true
   
 timezone: Europe/Madrid
 locale: "es-ES"
