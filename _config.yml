@@ -17,6 +17,9 @@ show_excerpts: true # set to true to show excerpts on the homepage
 # refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
 minima:
   date_format: "%b %-d, %Y"
+baseurl: "/" # the subpath of your site, e.g. /blog/
+url: "https://www.arpovea.github.io" # the base hostname & protocol for your site
+
 
   # generate social links in footer
   social_links:
