@@ -57,7 +57,7 @@ url: "https://www.arpovea.github.io" # the base hostname & protocol for your sit
 
 defaults:
   - scope:
-      path: "_images"
+      path: ""
     values:
       image: true
   
