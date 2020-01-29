@@ -8,8 +8,6 @@ author:
   twitter : "arodriguezpovea"
   location: "Dos Hermanas, Sevilla,ES" # null (default), "absolute or relative url to link to author home"
 
-baseurl: "/" # the subpath of your site, e.g. /blog/
-
 description: > # this means to ignore newlines until "show_excerpts:"
   “La tecnología por sí sola no basta. También tenemos que poner el corazón” – Jane Goodall
   
