@@ -35,6 +35,7 @@ Captura de pantalla correspondiente:
 ![digwww.elmundo.es]({{ site.baseurl }}images/digelmundo.png)
 ![digwww.elmundo.es]({{ site.baseurl }}assets/digmarca.png){: .align-center }
 ![digwww.elmundo.es](/_images/DigyWireshark/digelmundo.png)
+![]({{ site.baseurl }}images/DigyWireshark/digelmundo.png)
 
 
 
