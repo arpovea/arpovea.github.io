@@ -29,7 +29,7 @@ dig www.elmundo.com
 ```
 Captura de pantalla correspondiente:    
 
-![digwww.elmundo.es]images/DigyWireshark/digelmundo.png    
+![digwww.elmundo.es]:images/DigyWireshark/digelmundo.png    
 
 ![ddigwww.elmundo.es](assets/DigyWireshark/digelmundo.png)    
 
