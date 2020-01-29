@@ -55,12 +55,6 @@ url: "https://www.arpovea.github.io" # the base hostname & protocol for your sit
     # - username: jekyll2
     #   instance: example.com
 
-defaults:
-  - scope:
-      path: ""
-    values:
-      image: true
-  
 timezone: Europe/Madrid
 locale: "es-ES"
 # If you want to link only specific pages in your header, uncomment
