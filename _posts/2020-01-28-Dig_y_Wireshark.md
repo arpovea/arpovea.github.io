@@ -29,10 +29,7 @@ dig www.elmundo.com
 ```
 Captura de pantalla correspondiente:    
 
-![dig2]:_images/digelmundo.png    
-
-
-
+![dig2](/_images/DigyWireshark/digelmundo.png)    
 
 Como se puede observar en las imágenes ambas webs estan alojadas en el servidor `151.101.133.50` con el CNAME(alias del dominio) "unidadeditorial.map.fastly.net".    
 
