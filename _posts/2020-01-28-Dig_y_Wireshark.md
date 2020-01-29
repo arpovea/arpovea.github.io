@@ -26,7 +26,7 @@ Captura de pantalla correspondiente:
 dig www.elmundo.com
 ```
 Captura de pantalla correspondiente:    
-![digwww.elmundo.es]({{ site.baseurl }}_images/digelmundo.png){: .align-center }
+![digwww.elmundo.es]({{ site.baseurl }}_assets/digelmundo.png){: .align-center }
 
 ![digwww.elmundo.es](/_images/digelmundo.png){: .align-center }
 ![ddigwww.elmundo.es](/assets/DigyWireshark/digelmundo.png)
