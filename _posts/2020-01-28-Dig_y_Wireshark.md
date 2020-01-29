@@ -24,7 +24,7 @@ Captura de pantalla correspondiente:
 ![digwww.marca.com](/assets/DigyWireshark/digmarca.png)
 
 [code lang=text]
-![digwww.marca.com]({{ site.baseurl }}/_images/digmarca.png)
+![digwww.marca.com]({{ site.baseurl }}_images/digmarca.png)
 [/code]
 
 ```bash
