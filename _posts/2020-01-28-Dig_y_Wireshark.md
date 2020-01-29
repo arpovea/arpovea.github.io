@@ -22,7 +22,7 @@ dig www.marca.com
 ```
 Captura de pantalla correspondiente:    
 
-![dig1]({{ baseurl }}assets/digmarca.png) 
+![dig1]({{ site.baseurl }}assets/digmarca.png) 
 
 ```bash
 dig www.elmundo.com
