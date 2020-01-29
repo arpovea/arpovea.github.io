@@ -21,7 +21,9 @@ Se va a realizar una petición DNS con el comando dig a las páginas www.marca.c
 dig www.marca.com
 ```
 Captura de pantalla correspondiente:    
+
 ![digwww.marca.com](_images/DigyWireshark/digmarca.png)
+
 ```bash
 dig www.elmundo.com
 ```
