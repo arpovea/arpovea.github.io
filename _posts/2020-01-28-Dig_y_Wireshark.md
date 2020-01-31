@@ -50,12 +50,12 @@ La primera conexión TSL, puesto que es una página que tiene seguridad HTTPS, c
 
 Mensajes del cliente:    
 
-![TSL1]({{ site.baseurl }}/assets/img/DigyWireshark/clientehellow1.png)
+![TSL1]({{ site.baseurl }}/assets/img/DigyWireshark/clienthellow1.png)
 
-![TSL2]({{ site.baseurl }}/assets/img/DigyWireshark/clientehellow2.png)
+![TSL2]({{ site.baseurl }}/assets/img/DigyWireshark/clienthellow2.png)
 
 Mensajes del servidor:    
 
-![TSL3]({{ site.baseurl }}/assets/img/DigyWireshark/serverhellow1.png)
+![TSL3]({{ site.baseurl }}/assets/img/DigyWireshark/serverhellow.png)
 
 ![TSL4]({{ site.baseurl }}/assets/img/DigyWireshark/serverhellow2.png)
