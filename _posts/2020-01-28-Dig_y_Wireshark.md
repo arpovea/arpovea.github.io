@@ -68,7 +68,7 @@ Ya que es una pagina con seguridad HTTPS no podemos sacar mucha información, de
 
 	-http.date==”Wed, 30 Mar 2011 22:40:55 GMT” —> Paquetes con respecto a una fecha
 
-	-http.content_type==”application/json” —> Según el tipo. Hay más tipos, pondremos ejemplos
+	-http.content_type==”application/json” —> Según el tipo. Hay más tipos.
 
 	-http.content_type==”image/png” —> Imágenes PNG
 
