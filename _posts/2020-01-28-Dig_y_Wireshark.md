@@ -37,4 +37,12 @@ Como se puede observar en las imágenes ambas webs estan alojadas en el servidor
 
 ## Wireshark
 
-Prueba1
+A continuación se realiza una captura del tráfico con Wireshark accediendo al sitio www.marca.com.
+En ella podemos observar lo siguiente:
+
+La petición y respuesta DNS:
+
+![dns1]({{ site.baseurl }}/assets/img/DigyWireshark/capturadnsmarca1.png)
+![dns2]({{ site.baseurl }}/assets/img/DigyWireshark/capturadns2.png)
+![ds3]({{ site.baseurl }}/assets/img/DigyWireshark/capturadns3.png)      
+
