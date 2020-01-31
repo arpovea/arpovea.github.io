@@ -44,5 +44,18 @@ La petición y respuesta DNS:
 
 ![dns1]({{ site.baseurl }}/assets/img/DigyWireshark/capturadnsmarca1.png)
 ![dns2]({{ site.baseurl }}/assets/img/DigyWireshark/capturadns2.png)
-![ds3]({{ site.baseurl }}/assets/img/DigyWireshark/capturadns3.png)      
+![dns3]({{ site.baseurl }}/assets/img/DigyWireshark/capturadns3.png)
 
+La primera conexión TSL, puesto que es una página que tiene seguridad HTTPS, con esto el cliente le pide los certificados a la página para poder conectarse de forma segura:    
+
+Mensajes del cliente:    
+
+![TSL1]({{ site.baseurl }}/assets/img/DigyWireshark/clientehellow1.png)
+
+![TSL2]({{ site.baseurl }}/assets/img/DigyWireshark/clientehellow2.png)
+
+Mensajes del servidor:    
+
+![TSL3]({{ site.baseurl }}/assets/img/DigyWireshark/serverhellow1.png)
+
+![TSL4]({{ site.baseurl }}/assets/img/DigyWireshark/serverhellow2.png)
