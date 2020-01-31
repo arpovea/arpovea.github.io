@@ -98,4 +98,4 @@ Estos son solo algunos ejemplos ¡Existen muchos mas!
 
 ***
 
-Muchas gracias por leer hasta aqui, espero que sirva de ayuda. Nos vemos en el siguiente post.
+Muchas gracias por leer hasta aquí, espero que sirva de ayuda. Nos vemos en el siguiente post.
