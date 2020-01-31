@@ -59,3 +59,43 @@ Mensajes del servidor:
 ![TSL3]({{ site.baseurl }}/assets/img/DigyWireshark/serverhellow.png)
 
 ![TSL4]({{ site.baseurl }}/assets/img/DigyWireshark/serverhellow2.png)
+
+Ya que es una pagina con seguridad HTTPS no podemos sacar mucha información, de todas formas dejo por aqui los filtros de Wireshark para paginas HTTP:   
+
+-http —> Protocolo HTTP
+
+-http.host==”www.google.com” —> Queremos ver los paquetes que tengan a Google como host.
+
+-http.date==”Wed, 30 Mar 2011 22:40:55 GMT” —> Paquetes con respecto a una fecha
+
+-http.content_type==”application/json” —> Según el tipo. Hay más tipos, pondremos ejemplos
+
+-http.content_type==”image/png” —> Imágenes PNG
+
+-http.content_type==”image/gif” —> Imágenes GIF
+
+-http.content_type==”image/jpeg” —> Imágenes JPEG
+
+-http.content_type==”text/html” —> Archivos HTML
+
+-http.content_type==”text/css” —> Hojas de estilo CSS
+
+-http.content_type==”video/quicktime” —> Vídeos
+
+-http.content_type==”application/zip” —> Archivos ZIP
+
+-http.request.method==”GET” —> Tipo de Petición GET
+
+-http.request.method==”POST” —> Tipo de Petición POST
+
+-http.user_agent contains “Mozilla” —> Navegador Mozilla
+
+-http.request.uri!=*—> Con esto me libro de los paquetes “NOTIFY * HTTP…”
+
+-http.request.uri matches “[0-9]” —> Uso de expresiones regulares.
+
+Estos son solo algunos ejemplos ¡Existen muchos mas!    
+
+***
+
+Muchas gracias por leer hasta aqui, espero que sirva de ayuda. Nos vemos en el siguiente post.
