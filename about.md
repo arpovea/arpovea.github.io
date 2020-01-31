@@ -4,7 +4,7 @@ title: Acerca de
 permalink: /about/
 ---
 
-¡Buenas! Me llamo Adrián y soy estudiante de Grado Superior: Administración de Sistemas Imformáticos y Redes.
+¡Buenas! Me llamo Adrián y soy estudiante de Grado Superior: Administración de Sistemas Informáticos y Redes.
 
 ### Mas Información:
 
