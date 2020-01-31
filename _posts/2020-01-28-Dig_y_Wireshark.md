@@ -60,7 +60,7 @@ Mensajes del servidor:
 
 ![TSL4]({{ site.baseurl }}/assets/img/DigyWireshark/serverhellow2.png)
 
-Ya que es una pagina con seguridad HTTPS no podemos sacar mucha información, de todas formas dejo por aquí los filtros de Wireshark para paginas HTTP:   
+Ya que es una página con seguridad HTTPS no podemos sacar mucha información, de todas formas dejo por aquí los filtros de Wireshark para paginas HTTP:   
 
 	-http —> Protocolo HTTP
 
