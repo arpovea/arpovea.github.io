@@ -20,10 +20,10 @@ A continuación se expondra el escenario y los comandos que se van a utilizar en
 
 Esquema de escenario:    
 
-`10.0.100.0/24 -> h1, h2 y r1    
-10.0.110.0/24 -> r1 y r2    
-10.0.120.0/24 -> r2 y r3    
-10.0.130.0/24 -> h3, h4  y r3`    
+`10.0.100.0/24 -> h1, h2 y r1`    
+`10.0.110.0/24 -> r1 y r2`    
+`10.0.120.0/24 -> r2 y r3`    
+`10.0.130.0/24 -> h3, h4  y r3`    
 
 ![escenario]({{ site.baseurl }}/assets/img/Hping3yNetCat/escenario.png)
 
