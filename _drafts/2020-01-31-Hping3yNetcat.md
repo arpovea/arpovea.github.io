@@ -148,7 +148,7 @@ Capturas de Wireshark:
 
 Como se puede obsevar en estas capturas se ve La conexión TCP con la etiqueta [SYN,ACK] y luego los mensajes enviados con la etiqueta [PSH,ACK].    
 
-Ahora se cerrara la conexión y se mostrara la secuencia de cierre con Wireshark:    
+Ahora se cerrara la conexión y se mostrará la secuencia de cierre con Wireshark:    
 
 ![secuenciadecerrado]({{ site.baseurl }}/assets/img/Hping3yNetCat/secuenciadecerrado.png)    
 
