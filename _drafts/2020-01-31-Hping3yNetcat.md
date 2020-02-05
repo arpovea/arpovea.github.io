@@ -174,6 +174,8 @@ Capturas de Wireshark:
 ![UDP1]({{ site.baseurl }}/assets/img/Hping3yNetCat/Netcatudp1.png)    
 ![UDP2]({{ site.baseurl }}/assets/img/Hping3yNetCat/netcapUDP2.png)    
 
-Con el protocolo UDP no se comprueban las mismas cosas que con el protocolo TCP, la única ventaja de UDP es que es más liviano y en algunas ocasiones tiene sus ventajas.
+Con el protocolo UDP no se comprueban las mismas cosas que con el protocolo TCP, la única ventaja de UDP es que es más liviano y en algunas ocasiones tiene sus ventajas.Como se puede observar solo estan los mensajes enviados desde H4 hacia H1.    
 
 ***
+
+Muchas gracias por leer hasta aquí espero que sirva de ayuda. Un saludo.    
