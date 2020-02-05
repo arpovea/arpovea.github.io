@@ -142,7 +142,7 @@ A continuación se escribe en H2 y aparecerá en H3 como muestra la siguiente im
 Capturas de Wireshark:    
 
 ![netcap1]({{ site.baseurl }}/assets/img/Hping3yNetCat/netcap1.png)    
-![netcap2]({{ site.baseurl }}/assets/img/Hping3yNetCat/netcap2.png)    
+![netcap2]({{ site.baseurl }}/assets/img/Hping3yNetCat/netcat2.png)    
 ![mensaje1]({{ site.baseurl }}/assets/img/Hping3yNetCat/mensaje1psh.png)    
 ![mensaje2]({{ site.baseurl }}/assets/img/Hping3yNetCat/mensaje2psh.png)    
 
