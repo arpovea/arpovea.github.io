@@ -157,11 +157,11 @@ Aqui se ve la etiqueta [FIN,ACK] y sus respectivas respuestas, indicando el cier
 
 Probaremos a realizar lo mismo pero con un servidor UDP en vez de TCP, esta vez el servidor en H1 y la conexion desde H4:    
 
-Comando para el servidor TCP en H1:    
+Comando para el servidor UDP en H1:    
 ```bash
 nc -u -l 80
 ```
-Comando para realizar la conexión desde H4:    
+Comando para realizar la conexión UDP desde H4:    
 ```bash
 nc -u 10.0.130.3 80
 ```
