@@ -152,7 +152,7 @@ Ahora se cerrara la conexión y se mostrara la secuencia de cierre con Wireshark
 
 ![secuenciadecerrado]({{ site.baseurl }}/assets/img/Hping3yNetCat/secuenciadecerrado.png)    
 
-Aqui se ve la etiqueta [FIN,ACK] y sus respectivas respuestas, indicando el cierre de la conexión.    
+Aquí se observa la etiqueta [FIN,ACK] y sus respectivas respuestas, indicando el cierre de la conexión.    
 
 
 Probaremos a realizar lo mismo pero con un servidor UDP en vez de TCP, esta vez el servidor en H1 y la conexión desde H4:    
