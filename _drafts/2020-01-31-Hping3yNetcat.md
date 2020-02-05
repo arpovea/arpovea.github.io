@@ -98,14 +98,14 @@ Comando H1:
 hping -K 0 --ttl 3 -c 3 10.0.130.4
 ```
 
-La opcion --ttl cambia por defecto la ttl de 64(por defecto) a en este caso 3.
+La opcion --ttl cambia por defecto la ttl de "64"(por defecto) en "3" en este caso.
 
 ![TTL]({{ site.baseurl }}/assets/img/Hping3yNetCat/TTL.png)
 
 Como se puede observar en la imagen no llega a su destino.    
 
 
-Ahora se intentará realizar una conexion desde el puerto 4000 al puerto 80 desde H1:    
+Ahora se intentará realizar una conexion desde el puerto "4000" al puerto "80" desde H1:    
 ```bash
 hping3 -s 4000 -p 80 10.0.130.4
 ```
@@ -118,14 +118,14 @@ Capturas en Wireshark:
 ![TCP4000-1]({{ site.baseurl }}/assets/img/Hping3yNetCat/capturaTCP4000-1.png)    
 ![TCP4000-2]({{ site.baseurl }}/assets/img/Hping3yNetCat/capturaTCP4000-2.png)    
 
-Como se puede observar al no estar el puerto 80 activo se recibe la etiqueta [RST,ACK] que indica que no hay nada en ese puerto, si hubiera un servicio en ese puerto escuchando se mostraría la etiqueta [SYN,ACK].    
+Como se puede observar al no estar el puerto "80" activo se recibe la etiqueta [RST,ACK] que indica que no hay nada en ese puerto, si hubiera un servicio en ese puerto escuchando se mostraría la etiqueta [SYN,ACK].    
 
 
 *** 
 
 ## NetCat
 
-Con NetCat se creara un servidor TCP en el puerto 80 de H3 y se realizará una conexión desde H2, se capturará el tráfico con Wireshark en R3:    
+Con NetCat se creara un servidor TCP en el puerto "80" de H3 y se realizará una conexión desde H2, se capturará el tráfico con Wireshark en R3:    
 
 Comando para el servidor TCP en H3:    
 ```bash
