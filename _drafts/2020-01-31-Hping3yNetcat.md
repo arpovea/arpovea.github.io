@@ -155,7 +155,7 @@ Ahora se cerrara la conexión y se mostrara la secuencia de cierre con Wireshark
 Aqui se ve la etiqueta [FIN,ACK] y sus respectivas respuestas, indicando el cierre de la conexión.    
 
 
-Probaremos a realizar lo mismo pero con un servidor UDP en vez de TCP, esta vez el servidor en H1 y la conexion desde H4:    
+Probaremos a realizar lo mismo pero con un servidor UDP en vez de TCP, esta vez el servidor en H1 y la conexión desde H4:    
 
 Comando para el servidor UDP en H1:    
 ```bash
