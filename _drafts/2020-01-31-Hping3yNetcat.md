@@ -110,6 +110,9 @@ Ahora se intentará realizar una conexion desde el puerto 4000 al puerto 80 desd
 hping3 -s 4000 -p 80 10.0.130.4
 ```
 
+La opción -s indica el puerto base.    
+La opción -p indica el puerto destino.    
+
 Capturas en Wireshark:
 
 ![TCP4000-1]({{ site.baseurl }}/assets/img/Hping3yNetCat/capturaTCP4000-1.png)    
