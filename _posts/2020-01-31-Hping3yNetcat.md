@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Probando Dig y Wireshark
+title: Hping3 y NetCat
 excerpt_separator: <!--more-->
 author:
 - Adrián Rodríguez Povea
