@@ -125,6 +125,55 @@ Como se puede observar al no estar el puerto 80 activo se recibe la etiqueta [RS
 
 ## NetCat
 
+Con NetCat se creara un servidor TCP en el puerto 80 de H3 y se realizará una conexión desde H2, se capturará el tráfico con Wireshark en R3:    
 
+Comando para el servidor TCP en H3:    
+```bash
+nc -l 80
+```
+Comando para realizar la conexión desde H2:    
+```bash
+nc 10.0.130.3 80
+```
+A continuación se escribe en H2 y aparecerá en H3 como muestra la siguiente imagen:
+
+![TCPconexion]({{ site.baseurl }}/assets/img/Hping3yNetCat/TCPconexion.png)    
+
+Capturas de Wireshark:    
+
+![netcap1]({{ site.baseurl }}/assets/img/Hping3yNetCat/netcap1.png)    
+![netcap2]({{ site.baseurl }}/assets/img/Hping3yNetCat/netcap2.png)    
+![mensaje1]({{ site.baseurl }}/assets/img/Hping3yNetCat/mensaje1psh.png)    
+![mensaje2]({{ site.baseurl }}/assets/img/Hping3yNetCat/mensaje2psh.png)    
+
+Como se puede obsevar en estas capturas se ve La conexión TCP con la etiqueta [SYN,ACK] y luego los mensajes enviados con la etiqueta [PSH,ACK].    
+
+Ahora se cerrara la conexión y se mostrara la secuencia de cierre con Wireshark:    
+
+![secuenciadecerrado]({{ site.baseurl }}/assets/img/Hping3yNetCat/secuenciadecerrado.png)    
+
+Aqui se ve la etiqueta [FIN,ACK] y sus respectivas respuestas, indicando el cierre de la conexión.    
+
+
+Probaremos a realizar lo mismo pero con un servidor UDP en vez de TCP, esta vez el servidor en H1 y la conexion desde H4:    
+
+Comando para el servidor TCP en H1:    
+```bash
+nc -u -l 80
+```
+Comando para realizar la conexión desde H4:    
+```bash
+nc -u 10.0.130.3 80
+```
+A continuación se escribe en H4 y aparecerá en H1 como muestra la siguiente imagen:    
+
+![UDPconexion]({{ site.baseurl }}/assets/img/Hping3yNetCat/UDPconexion.png)    
+
+Capturas de Wireshark:    
+
+![UDP1]({{ site.baseurl }}/assets/img/Hping3yNetCat/Netcatudp1.png)    
+![UDP2]({{ site.baseurl }}/assets/img/Hping3yNetCat/netcapUDP2.png)    
+
+Con el protocolo UDP no se comprueban las mismas cosas que con el protocolo TCP, la unica ventaja de UDP es que es mas liviano y en algunas ocasiones tiene sus ventajas.
 
 ***
