@@ -87,8 +87,8 @@ La opción -c indica el número de paquetes que se enviarán en este caso "5".
 
 Estas son las capturas realizadas con Wireshark en R3:    
 
-![echorequest1]({{ site.baseurl }}/assets/img/Hping3yNetCat/capturaechorequest1.png)
-![echorequest2]({{ site.baseurl }}/assets/img/Hping3yNetCat/capturaechorequest2.png)
+![echorequest1]({{ site.baseurl }}/assets/img/Hping3yNetCat/capturaechorequest1.png)    
+![echorequest2]({{ site.baseurl }}/assets/img/Hping3yNetCat/capturaechorequest2.png)    
 
 A continución cambiaremos la TTL para que no sea alcanzable H4:    
 
@@ -112,8 +112,8 @@ hping3 -s 4000 -p 80 10.0.130.4
 
 Capturas en Wireshark:
 
-![TCP4000-1]({{ site.baseurl }}/assets/img/Hping3yNetCat/capturaTCP4000-1.png)
-![TCP4000-2]({{ site.baseurl }}/assets/img/Hping3yNetCat/capturaTCP4000-2.png)
+![TCP4000-1]({{ site.baseurl }}/assets/img/Hping3yNetCat/capturaTCP4000-1.png)    
+![TCP4000-2]({{ site.baseurl }}/assets/img/Hping3yNetCat/capturaTCP4000-2.png)    
 
 Como se puede observar al no estar el puerto 80 activo se recibe la etiqueta [RST,ACK] que indica que no hay nada en ese puerto, si hubiera un servicio en ese puerto escuchando se mostraría la etiqueta [SYN,ACK].    
 
