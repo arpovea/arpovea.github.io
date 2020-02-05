@@ -33,7 +33,7 @@ Se dejan por aquí los enlaces a los scripts tanto del escenario como del despli
 
 [Scrip Despliegue](https://github.com/arpovea/arpovea.github.io/blob/master/assets/img/Hping3yNetCat/escenariotrasnporte2.py)
 
-Una vez desplegago el escenario los comandos para configurar la red en cada máquina son:    
+Una vez desplegado el escenario los comandos para configurar la red en cada máquina son:    
 
 ```bash
 #H1 
