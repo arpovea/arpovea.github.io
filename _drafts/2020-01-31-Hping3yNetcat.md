@@ -105,7 +105,7 @@ La opcion --ttl cambia por defecto la ttl de 64(por defecto) a en este caso 3.
 Como se puede observar en la imagen no llega a su destino.    
 
 
-Ahora se intentará realizar una conexion desde el puerto 4000 al puerto 80:    
+Ahora se intentará realizar una conexion desde el puerto 4000 al puerto 80 desde H1:    
 ```bash
 hping3 -s 4000 -p 80 10.0.130.4
 ```
