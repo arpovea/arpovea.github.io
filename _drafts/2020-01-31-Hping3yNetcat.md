@@ -71,15 +71,57 @@ ip a add 10.0.130.4/24 dev h4-eth0
 ip r add default via 10.0.130.2
 ```    
 
-
-
-
 ***
 
-## HPping3
+## HPing3
+
+Ahora se va a realizar con el comando HPing3 un Echo Request desde H1 hacia H4 capturando el tráfico en R3 con Wireshark:    
+
+Comando H1:
+
+```bash
+hping3 -K 0 -c 5 10.0.130.4
+```
+La opción -K indica que utilice Echo Request, este vendria por defecto pero con esto se le especifica.    
+La opción -c indica el número de paquetes que se enviarán en este caso "5".     
+
+Estas son las capturas realizadas con Wireshark en R3:    
+
+![echorequest1]({{ site.baseurl }}/assets/img/Hping3yNetCat/capturaechorequest1.png)
+![echorequest2]({{ site.baseurl }}/assets/img/Hping3yNetCat/capturaechorequest2.png)
+
+A continución cambiaremos la TTL para que no sea alcanzable H4:    
+
+Comando H1:    
+
+```bash
+hping -K 0 --ttl 3 -c 3 10.0.130.4
+```
+
+La opcion --ttl cambia por defecto la ttl de 64(por defecto) a en este caso 3.
+
+![TTL]({{ site.baseurl }}/assets/img/Hping3yNetCat/TTL.png)
+
+Como se puede observar en la imagen no llega a su destino.    
+
+
+Ahora se intentará realizar una conexion desde el puerto 4000 al puerto 80:    
+```bash
+hping3 -s 4000 -p 80 10.0.130.4
+```
+
+Capturas en Wireshark:
+
+![TCP4000-1]({{ site.baseurl }}/assets/img/Hping3yNetCat/capturaTCP4000-1.png)
+![TCP4000-2]({{ site.baseurl }}/assets/img/Hping3yNetCat/capturaTCP4000-2.png)
+
+Como se puede observar al no estar el puerto 80 activo se recibe la etiqueta [RST,ACK] que indica que no hay nada en ese puerto, si hubiera un servicio en ese puerto escuchando se mostraría la etiqueta [SYN,ACK].    
+
 
 *** 
 
 ## NetCat
+
+
 
 ***
