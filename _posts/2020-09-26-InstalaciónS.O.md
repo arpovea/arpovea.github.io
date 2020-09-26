@@ -23,8 +23,11 @@ Una vez se llega a la parte de particionado de la instalación del sistema Debia
 Se va a crear una partición de 500MB para `/boot` aparte del sistema LVM ya que esto no interesa que cambie en un futuro, una vez realizado esto selecciona "Configurar el Gestor de Volúmenes Lógicos (LVM)" en el cual pedirá:
 
  - Crear un grupo de volumenes y seleccionar el disco que se va a utilizar:
+
 ...En este caso se le llama al grupo de volumenes "Sistema" y se elige el espacio libre para que lo utilize como si fuera un disco físico, en total unos 140 GB como se ha mencionado anteriormente.
+
  - Luego hay que crear los volúmenes lógicos dentro de ese grupo de volúmenes:
+
 ...Para ellos selecciona el grupo de volúmenes de "Sistema" y crea dos volúmenes lógicos, a uno se le llama "root" donde se montará el raiz y al otro "home" donde se montará /home. El sistema de fichero utilizados en estos dos volumenes es "xfs".
 
 
