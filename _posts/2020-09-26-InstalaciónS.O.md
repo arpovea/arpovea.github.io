@@ -75,11 +75,11 @@ sudo vgs
 
 Errores producidos dependiendo del modelo de nuestros dispositivos, en este caso se esta utilizanddo un portatil MSI [GS73 7RE Stealth Pro](https://es.msi.com/Laptop/GS73-7RE-Stealth-Pro/Specification):
 
-1. El equipo se queda congelado en el arranque:
+1. El equipo se queda congelado en el arranque:    
 	En este caso concreto lo que provocaba la congelación era problema de la gráfica nvidia.
 	Procedemos a iniciar el equipo con la opción `nouveau.modeset=0` esto obliga el kernel a no cargar el controlador libre de nvidia que es nouveau lo cual elimina el congelamiento ya que aun no estan instalados los drives nvidia.    
 	Para realizar esto una vez arranque grub pulsamos la tecla "e" lo cual permitirá editar las opciones de arranque por defecto y no se realiza de forma permanente, hay que escribir esta opción al final de la linea que comienza por "linux", para iniciar con estas opciones que se han editado pulsar la tecla "F10".    
-	Una vez se puede acceder a una TTY lo primero a realizar es activar los repositorios `non-free` para poder instalar los controladores necesarios para la tarjeta gráfica para ello edita los repositorios:
+	Una vez se puede acceder a una TTY lo primero a realizar es activar los repositorios `non-free` para poder instalar los controladores necesarios para la tarjeta gráfica para ello edita los repositorios:    
 
 ```bash
 	sudo nano /etc/apt/source.list
