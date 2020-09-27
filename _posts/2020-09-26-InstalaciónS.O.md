@@ -75,7 +75,7 @@ sudo vgs
 
 Errores producidos dependiendo del modelo de nuestros dispositivos, en este caso se esta utilizanddo un portatil MSI [GS73 7RE Stealth Pro](https://es.msi.com/Laptop/GS73-7RE-Stealth-Pro/Specification):
 
-1. El equipo se queda congelado en el arranque:
+### 1. El equipo se queda congelado en el arranque:
 
 En este caso concreto lo que provocaba la congelación era problema de la gráfica nvidia.   
 
