@@ -64,25 +64,25 @@ Si realizas de nuevo un `lsblk` obtendras algo como esto:
 La diferencia entre RAID5 y RAID1 es:
 
 2. Tarea 2: Comprueba las características del RAID. Comprueba el estado del RAID. ¿Qué capacidad tiene el RAID que hemos creado?.  
-La capacidad es de 2GB y para comprobar el estado del RAID5 hay varias formas: 
+La capacidad es de 2GB, para comprobar el estado del RAID5 se consulta un fichero y para los detalles un comando: 
 
-- Consultando el fichero `/etc/proc/mdstat`:
+- Consultando el fichero `/etc/proc/mdstat` para ver su estado:
 
 ```bash
 sudo cat /etc/proc/mdstat
 ```
 
-- Con el siguiente comando:
+- consultando los detalles:
 
 ```bash
 sudo mdadm -D /dev/md5
 ```
 
-En la siguiente imagen se pueden ver ambas formas:
+En la siguiente imagen se pueden ver tanto el estado como los detalles:
 
 ![mdadmstatus]({{ site.baseurl }}/assets/img/TareaRAID5/comprobacionstadoraid.png)
 
-3. Tarea 3: Crea un volumen lógico (LVM) de 500MB en el raid 5.    
+3. Tarea 3: Crea un volumen lógico (LVM) de 500MB en el raid5.    
 
 4. Tarea 4: Formatea ese volumen con un sistema de archivo `xfs`.    
 
