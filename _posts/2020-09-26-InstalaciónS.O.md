@@ -176,4 +176,4 @@ Otras opciones interesantes para corregir los errores en los logs del sistema co
 
 ***
     
-Muchas gracias por leer hasta aquí espero que haya servido de ayuda.Un saludo.
+Muchas gracias por leer hasta aquí espero que haya servido de ayuda. Un saludo.
