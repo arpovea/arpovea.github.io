@@ -170,7 +170,7 @@ Una vez guardado realiza:
 ```bash
 sudo update-grub
 ```
-Y una vez se reinicie la máquina el Kernel arrancara con esta opción.
+Y una vez se reinicie la máquina el Kernel arrancará con esta opción.
 
 Otras opciones interesantes para corregir los errores en los logs del sistema con los PCI/PCIe son las opcion `pci=noaer` y `pci=nomsi` pero ya dependera de vuestro caso, podeis consultar la siguiente página para comprobar o buscar parametros del Kernel [aqui](https://www.kernel.org/doc/html/latest/admin-guide/kernel-parameters.html).
 
