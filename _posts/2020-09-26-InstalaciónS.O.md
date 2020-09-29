@@ -125,7 +125,7 @@ sudo apt policy linux-image-amd64
 sudo apt policy nvidia-driver
 sudo apt install -t buster-backports linux-image-amd64 nvidia-driver
 ```    
-Una vez reiniciado soluciono el tema gráfico del equipo.
+Una vez reiniciado esto soluciono el tema gráfico del equipo.
 
 ### 2. La tarjeta wifi no funciona:
 
