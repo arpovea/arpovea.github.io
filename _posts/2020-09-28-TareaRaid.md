@@ -40,7 +40,7 @@ Una vez iniciada la máquina deberiamos obtener con el comando `lsblk` lo siguie
 
 ![lsblk]({{ site.baseurl }}/assets/img/TareaRAID5/lsblk.png)  
 
-Lo siguiente es instalar el paquete mdadm si no lo teneis ya instalado en la máquina virtual:
+Lo siguiente es instalar el paquete `mdadm`, si no lo teneis ya instalado en la máquina virtual:
 
 ```bash
 sudo apt update && sudo apt install -y mdadm
@@ -51,6 +51,8 @@ sudo apt update && sudo apt install -y mdadm
 ## Tareas RAID5
 
 1. Tarea 1: Crea una raid llamado "md5" con los discos que hemos conectado a la máquina. ¿Cuantós discos tienes que conectar? ¿Qué diferencia existe entre el RAID 5 y el RAID1?.    
+
+Para el RAID5 hay que conectar 3 discos, es decir tendremos en total una capacidad de 2GB para ello utilizamos el siguiente comando:
 
 2. Tarea 2: Comprueba las características del RAID. Comprueba el estado del RAID. ¿Qué capacidad tiene el RAID que hemos creado?.    
 
