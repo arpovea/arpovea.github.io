@@ -54,6 +54,13 @@ sudo apt update && sudo apt install -y mdadm
 
 Para el RAID5 hay que conectar 3 discos, es decir tendremos en total una capacidad de 2GB para ello utilizamos el siguiente comando:
 
+```bash
+sudo mdadm -C /dev/md5 --level=raid5 --raid-devices=3 /dev/vdb /dev/vdc /dev/vdd
+```
+Si realizas de nuevo un lsblk obtendras algo como esto:
+
+![lsblk2]({{ site.baseurl }}/assets/img/TareaRAID5/lsblk2.png)
+
 2. Tarea 2: Comprueba las características del RAID. Comprueba el estado del RAID. ¿Qué capacidad tiene el RAID que hemos creado?.    
 
 3. Tarea 3: Crea un volumen lógico (LVM) de 500Mb en el raid 5.    
