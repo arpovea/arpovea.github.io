@@ -35,7 +35,7 @@ Una vez realizado esto procedemos con la instalación normalmente hasta finaliza
 
 Una vez iniciado el sistema, con los siguientes comandos se comprueba que todo a quedado como se pretendia:
 
-Listamos Dispositivos de bloque del sistema:
+Listamos dispositivos de bloque del sistema:
 
 ```bash
 lsblk
@@ -43,7 +43,7 @@ lsblk
 
 ![lsblk]({{ site.baseurl }}/assets/img/Insta.S.O/lsblk.png)  
 
-Listamos los dispositivos fisicos agregados a LVM:
+Listamos los dispositivos físicos agregados a LVM:
 
 ```bash
 sudo pvdisplay
@@ -79,9 +79,9 @@ Errores producidos dependiendo del modelo de nuestros dispositivos, en este caso
 
 En este caso concreto lo que provocaba la congelación era problema de la gráfica nvidia.   
 
-Procede a iniciar el equipo con la opción `nouveau.modeset=0` esto obliga el kernel a no cargar el controlador libre de nvidia que es nouveau lo cual elimina el congelamiento ya que aun no estan instalados los drives nvidia. 
+Procede a iniciar el equipo con la opción `nouveau.modeset=0` esto obliga el kernel a no cargar el controlador libre de nvidia que es nouveau lo cual elimina el congelamiento ya que aún no están instalados los drives nvidia. 
 
-Para realizar esto una vez arranque grub pulsamos la tecla "e" lo cual permitirá editar las opciones de arranque por defecto y no se realiza de forma permanente, hay que escribir esta opción al final de la linea que comienza por "linux", para iniciar con estas opciones que se han editado pulsar la tecla "F10".    
+Para realizar esto una vez arranque grub pulsamos la tecla "e" lo cual permitirá editar las opciones de arranque por defecto y no se realiza de forma permanente, hay que escribir esta opción al final de la línea que comienza por "linux", para iniciar con estas opciones que se han editado pulsar la tecla "F10".    
 
 Una vez se puede acceder a una TTY lo primero a realizar es activar los repositorios `non-free` para poder instalar los controladores necesarios para la tarjeta gráfica para ello edita los repositorios:    
 
@@ -105,9 +105,9 @@ sudo apt install nvidia-detect
 sudo nvidia-detect
 sudo apt install nvidia-driver
 ```    
-Una vez realizado esto reinicia el equipo si todo va bien deberia de funcionar, en nuestro caso esto no funciono, ya que la tarjeta gráfica tenia varios bugs tanto en la versión del Kernel que estaba utilizando la version de Buster instalada como en la versión del paquete "nvidia-driver".    
+Una vez realizado esto reinicia el equipo si todo va bien debería de funcionar, en nuestro caso esto no funciono, ya que la tarjeta gráfica tenía varios bugs tanto en la versión del Kernel que estaba utilizando la versión de Buster instalada como en la versión del paquete "nvidia-driver".    
 	
-Si todo a fallado realiza la desistalación completa del driver de nvidia, de nuevo en una TTY:
+Si todo ha fallado realiza la desistalación completa del driver de nvidia, de nuevo en una TTY:
 
 ```bash
 sudo apt purge nvidia*
@@ -149,17 +149,17 @@ Con esto no se cargaran estos módulos del kernel al iniciar, evitando dichos er
 
 ### 4. Distintos problemas que aparecen en los logs
 
-Uno de los errores que se repetian en los logs de este equipo era con los puertos PCIe del tipo:
+Uno de los errores que se repetían en los logs de este equipo era con los puertos PCIe del tipo:
 
 ```
 pcieport 0000:00:03.0: PCIe Bus Error: AER / Bad TLP
 ```
 
-Buscando bastante información, encontre que la CPU se comunica con los controladores de bus PCIe mediante unos paquetes (TLP) y el hardware detecta cuando hay fallos y el kernel de linux informa de estos errores, con la opción `pci=nommconf` deshabilitas una configuración de los PCI llamada `Memory-Mapped PCI` que esta implementada en el Kernel linux desde el 2.6 antes de esto todos los dispositivos PCI tenian un area que describia a este dispositivo, y el metodo original para acceder a este area era con I/O mientras que con el nuevo "metodo" se simplifica este mecanismo para que sea mas eficiente, pues deshabilitando este nuevo "metodo" y volviendo a los anteriores metodos de acceso, soluciona este problema.
+Buscando bastante información, encontre que la CPU se comunica con los controladores de bus PCIe mediante unos paquetes (TLP), el hardware detecta cuando hay fallos y el kernel de linux informa de estos errores, con la opción `pci=nommconf` deshabilitas una configuración de los PCI llamada `Memory-Mapped PCI` que esta implementada en el Kernel linux desde el 2.6, antes de esto, todos los dispositivos PCI tenían un área que describía a este dispositivo, y el método original para acceder a este área era con I/O, mientras que con el nuevo "método" se simplifica este mecanismo para que sea mas eficiente, pues deshabilitando este nuevo "método" y volviendo al original, soluciona este problema.
 
-Esto es un caso particular, por los distintos componentes y su union, pero utilizando esta opcion del Kernel se soluciona el problema.
+Esto es un caso particular, por los distintos componentes y su unión, pero utilizando esta opción del Kernel se soluciona el problema.
 
-Para que esta opción sea definitiva vamos a editar una linea en el fichero `/etc/default/grup` quedando por ejemplo así:
+Para que esta opción sea definitiva vamos a editar una línea en el fichero `/etc/default/grup` quedando por ejemplo así:
 
 ```
 GRUB_CMDLINE_LINUX_DEFAULT="pci=nommconf"
@@ -172,7 +172,7 @@ sudo update-grub
 ```
 Y una vez se reinicie la máquina el Kernel arrancará con esta opción.
 
-Otras opciones interesantes para corregir los errores en los logs del sistema con los PCI/PCIe son las opcion `pci=noaer` y `pci=nomsi` pero ya dependera de vuestro caso, podeis consultar la siguiente página para comprobar o buscar parametros del Kernel [aqui](https://www.kernel.org/doc/html/latest/admin-guide/kernel-parameters.html).
+Otras opciones interesantes para corregir los errores en los logs del sistema con los PCI/PCIe son las opción `pci=noaer` y `pci=nomsi` pero ya dependerá de vuestro caso, podéis consultar la siguiente página para comprobar o buscar parámetros del Kernel [aquí](https://www.kernel.org/doc/html/latest/admin-guide/kernel-parameters.html).
 
 ***
     
