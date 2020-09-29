@@ -127,7 +127,52 @@ sudo apt install -t buster-backports linux-image-amd64 nvidia-driver
 ```    
 Una vez reiniciado soluciono el tema gráfico del equipo.
 
-2. Error Wifi:
+### 2. La tarjeta wifi no funciona:
+
+Esto suele ocurrir sobre todo con las tarjetas Realtek y las Atheros, simplemente instalando el firmware/driver de la tarjeta del equipo se soluciona, en este caso:
+
+```bash
+sudo apt install firmware-atheros
+```
+
+### 3. Problema con bluetooth y Thunderbolt
+
+Al iniciar el equipo todo funciona correctamente, pero si realizamos una comprobación de los logs con `journalctl` en este equipo en concreto se observan errores con algunos componentes, como son el bluetooth y Thunderbolt, en principio como son dos dispositivos que no se van a utilizar vamos a desactivar el módulo del Kernel de ambos que da problemas, para ello se crea un fichero en `/etc/modprobe.d/blacklist.conf` con el siguiente contenido:
+
+```
+blacklist btusb
+blacklist bluetooth
+blacklist thunderbolt
+```
+
+Con esto no se cargaran estos módulos del kernel al iniciar, evitando dichos errores.
+
+### 4. Distintos problemas que aparecen en los logs
+
+Uno de los errores que se repetian en los logs de este equipo era con los puertos PCIe del tipo:
+
+```
+pcieport 0000:00:03.0: PCIe Bus Error: AER / Bad TLP
+```
+
+Buscando bastante información, encontre que la CPU se comunica con los controladores de bus PCIe mediante unos paquetes (TLP) y el hardware detecta cuando hay fallos y el kernel de linux informa de estos errores, con la opción `pci=nommconf` deshabilitas una configuración de los PCI llamada `Memory-Mapped PCI` que esta implementada en el Kernel linux desde el 2.6 antes de esto todos los dispositivos PCI tenian un area que describia a este dispositivo, y el metodo original para acceder a este area era con I/O mientras que con el nuevo "metodo" se simplifica este mecanismo para que sea mas eficiente, pues deshabilitando este nuevo "metodo" y volviendo a los anteriores metodos de acceso, soluciona este problema.
+
+Esto es un caso particular, por los distintos componentes y su union, pero utilizando esta opcion del Kernel se soluciona el problema.
+
+Para que esta opción sea definitiva vamos a editar una linea en el fichero `/etc/default/grup` quedando por ejemplo así:
+
+```
+GRUB_CMDLINE_LINUX_DEFAULT="pci=nommconf"
+```
+
+Una vez guardado realiza:
+
+```bash
+sudo update-grub
+```
+Y una vez se reinicie la máquina el Kernel arrancara con esa opción.
+
+Otras opciones interesantes para corregir los errores en los logs del sistema con los PCI/PCIe son las opcion `pci=noaer` y `pci=nomsi` pero ya dependera de vuestro caso, podeis consultar la siguiente página para comprobar o buscar parametros del Kernel [aqui](https://www.kernel.org/doc/html/latest/admin-guide/kernel-parameters.html).
 
 ***
     
