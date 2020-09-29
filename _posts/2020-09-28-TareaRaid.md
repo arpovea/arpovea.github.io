@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Instalación Debian Buster con LVM
+title: Tareas con RAID5
 excerpt_separator: <!--more-->
 author:
 - Adrián Rodríguez Povea
