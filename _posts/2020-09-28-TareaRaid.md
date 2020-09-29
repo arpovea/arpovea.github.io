@@ -72,7 +72,7 @@ La capacidad es de 2GB, para comprobar el estado del RAID5 se consulta un ficher
 sudo cat /etc/proc/mdstat
 ```
 
-- consultando los detalles:
+- Consultando los detalles:
 
 ```bash
 sudo mdadm -D /dev/md5
