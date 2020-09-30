@@ -36,11 +36,11 @@ end
 
 Como podemos observar en el fichero agregamos 5 discos para realizar distintas pruebas a lo largo del ejercicio.
 
-Una vez iniciada la máquina deberiamos obtener con el comando `lsblk` lo siguiente:
+Una vez iniciada la máquina deberías obtener con el comando `lsblk` lo siguiente:
 
 ![lsblk]({{ site.baseurl }}/assets/img/TareaRAID5/lsblk.png)  
 
-Lo siguiente es instalar el paquete `mdadm`, si no lo teneis ya instalado en la máquina virtual:
+Lo siguiente es instalar el paquete `mdadm`, si no lo tenéis ya instalado en la máquina virtual:
 
 ```bash
 sudo apt update && sudo apt install -y mdadm
@@ -52,18 +52,23 @@ sudo apt update && sudo apt install -y mdadm
 
 1. Tarea 1: Crea una raid llamado "md5" con los discos que hemos conectado a la máquina. ¿Cuantós discos tienes que conectar? ¿Qué diferencia existe entre el RAID 5 y el RAID1?.    
 
-Para el RAID5 hay que conectar 3 discos, es decir tendremos en total una capacidad de 2GB para ello utilizamos el siguiente comando:
+Para el RAID5 hay que conectar 3 discos, es decir tiene en total una capacidad de 2GB, para hacer esto utiliza el siguiente comando:
 
 ```bash
-sudo mdadm -C /dev/md5 --level=raid5 --raid-devices=3 /dev/vdb /dev/vdc /dev/vdd
+sudo mdadm -C /dev/md5 --level=RAID5 --raid-devices=3 /dev/vdb /dev/vdc /dev/vdd
 ```
-Si realizas de nuevo un `lsblk` obtendras algo como esto:
+Si realizas de nuevo un `lsblk` obtendrás algo como esto:
 
 ![lsblk2]({{ site.baseurl }}/assets/img/TareaRAID5/lsblk2.png)
 
 La diferencia entre RAID5 y RAID1 es:
 
+En RAID5 los bloques estan distribuidos entre los 3 discos(los mínimos en RAID5) y soporta la pérdida total de unos de ellos, ya que distribuye la paridad entre los 3 dispositivos, pudiendo con dos recuperar toda la información.
+
+En RAID1 se utilizan dos discos y uno es una copia exacta del otro, tiene ventajas en velocidades de lectura, ya que se puede leer de los dos discos, pero tiene desventaja en la escritura ya debe escribir en ambos discos la misma información.
+
 2. Tarea 2: Comprueba las características del RAID. Comprueba el estado del RAID. ¿Qué capacidad tiene el RAID que hemos creado?.  
+
 La capacidad es de 2GB, para comprobar el estado del RAID5 se consulta un fichero y para los detalles un comando: 
 
 - Consultando el fichero `/etc/proc/mdstat` para ver su estado:
@@ -82,9 +87,9 @@ En la siguiente imagen se pueden ver tanto el estado como los detalles:
 
 ![mdadmstatus]({{ site.baseurl }}/assets/img/TareaRAID5/comprobacionstadoraid.png)
 
-3. Tarea 3: Crea un volumen lógico (LVM) de 500MB en el raid5.    
+3. Tarea 3: Crea un volumen lógico (LVM) de 500MB en el RAID5.    
 
-Para esto hay que añadir el RAID5 a los volumenes físicos, crear un grupo de volúmenes que utilize ese dispositivo y luego crear el volumen lógico:
+Para esto hay que añadir el RAID5 a los volúmenes físicos, crear un grupo de volúmenes que utilize ese dispositivo y luego crear el volumen lógico:
 
 ```bash
 sudo pvcreate /dev/md5
@@ -104,17 +109,17 @@ Realiza el siguiente comando:
 sudo mkfs.xfs /dev/tareas/tarea3
 ```
 
-5. Tarea 5: Monta el volumen en el directorio `/mnt/raid5` y crea un fichero. ¿Qué tendríamos que hacer para que este punto de montaje sea permanente?.
+5. Tarea 5: Monta el volumen en el directorio `/mnt/RAID5` y crea un fichero. ¿Qué tendríamos que hacer para que este punto de montaje sea permanente?.
 
 Para ello:
 
 ```bash
-mkdir /mnt/raid5
-sudo mount -t xfs /dev/tareas/tarea3 /mnt/raid5
-touch /mnt/raid5/fich.txt
+mkdir /mnt/RAID5
+sudo mount -t xfs /dev/tareas/tarea3 /mnt/RAID5
+touch /mnt/RAID5/fich.txt
 ```
 
-Para que fuera permanente tendrias que incluir este montaje en el fichero `fstab`.    
+Para que fuera permanente tendrías que incluir este montaje en el fichero `fstab`.    
 
 6. Tarea 6: Marca un disco como estropeado. Muestra el estado del raid para comprobar que un disco falla. ¿Podemos acceder al fichero?.    
 
@@ -144,7 +149,7 @@ Para ello utiliza el siguiente comando:
 sudo mdadm --manage /dev/md5 --remove /dev/vdb
 ``` 
 
-Observamos de nuevo el estado del raid5 y mostrará lo siguiente:
+Observamos de nuevo el estado del RAID5 y mostrará lo siguiente:
 
 ```bash
 cat /etc/proc/mdstat
@@ -182,7 +187,7 @@ Realiza los siguiente comandos para añadir el disco como reserva:
 mdadm --manage /dev/md5 -add /dev/vdf
 ```
 
-Puedes comprobar que se ha añadido como "SPARE" con comprobando el estado o los detalles del raid5 con los siguientes comandos:
+Puedes comprobar que se ha añadido como "SPARE" comprobando el estado o los detalles del RAID5 con los siguientes comandos:
 
 ```bash
 sudo mdadm -D /dev/md5
@@ -220,10 +225,10 @@ Con los siguientes comandos podras redimensionar el volumen y luego redimensiona
 
 ```bash
 sudo lvextend -L +1.5G /dev/tareas/tarea3 
-sudo xfs_growfs /mnt/raid5/
+sudo xfs_growfs /mnt/RAID5/
 ```
 
-Recalcar que con `xfs`se puede realizar esta acción en caliente con otros sistemas de ficheros podría ocasionar errores o perdida de datos.
+Recalcar que con `xfs`se puede realizar esta acción en caliente con otros sistemas de ficheros podría ocasionar errores o pérdida de datos.
 
 Al finalizar todas las tareas en este orden la orden `lsblk -f` debería mostrar algo así:
 
