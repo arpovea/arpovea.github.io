@@ -123,6 +123,7 @@ Para marcar un disco por ejemplo `vdb` como fallido utiliza:
 ```bash
 sudo mdadm --manage /dev/md5 --fail /dev/vdb
 ```
+
 Luego mira el estado con:
 
 ```bash
@@ -161,7 +162,7 @@ Para ello en este caso con un nuevo disco "vde":
 sudo mdadm --manage /dev/md5 --add /dev/vde
 ```
 
-Automáticamente se sincroniza con el raid observa los cambios con:
+Automáticamente se sincroniza con el raid, observa los cambios con:
 
 ```bash
 lsblk
@@ -173,9 +174,51 @@ Obteniendo algo similar a lo siguiente:
 ![agregandovde]({{ site.baseurl }}/assets/img/TareaRAID5/agregandovde.png)
 
 
-9. Tarea 9: Añade otro disco como reserva. Vuelve a simular el fallo de un disco y comprueba como automática se realiza la sincronización con el disco de reserva.    
+9. Tarea 9: Añade otro disco como reserva. Vuelve a simular el fallo de un disco y comprueba como automática se realiza la sincronización con el disco de reserva.
 
-10. Tarea 10: Redimensiona el volumen y el sistema de archivo de 500Mb al tamaño del raid.    
+Realiza los siguiente comandos para añadir el disco como reserva:
+
+```bash
+mdadm --manage /dev/md5 -add /dev/vdf
+```
+
+Puedes comprobar que se ha añadido como "SPARE" con comprobando el estado o los detalles del raid5 con los siguientes comandos:
+
+```bash
+sudo mdadm -D /dev/md5
+```
+O
+```bash
+cat /proc/mdstat
+```
+
+Ahora vuelve a marcar otro dispositivo como fallido esta vez `vdc`:
+
+```bash
+sudo mdadm --manage /dev/md5 --fail /dev/vdc
+```
+
+Como podemos ver en la siguiente imagen el disco pasa de SPARE (S) a activo y el otro se marca como FAIL (F)
+
+![SPAREautilizado]({{ site.baseurl }}/assets/img/TareaRAID5/SPAREautilizado.png)
+
+Como repunte, si quisieras que el disco se agregara como dispositivo adicional para aumentar las dimesiones del raid, después de agregarlo, realiza el siguiente comando:
+
+```bash
+sudo mdadm --grow /dev/md5 --raid-devices=4
+```
+
+Y luego aumentar el raid a la máxima capacidad disponible con:
+
+```bash
+sudo mdadm --grow /dev/md5 -z max
+```
+
+10. Tarea 10: Redimensiona el volumen y el sistema de archivo de 500Mb al tamaño del raid. 
+
+Con los siguientes comandos podras redimensionar el volumen y luego redimensionar el sistema de ficheros:
+
+
 
 ***
     
