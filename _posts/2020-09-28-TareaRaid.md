@@ -69,7 +69,7 @@ La capacidad es de 2GB, para comprobar el estado del RAID5 se consulta un ficher
 - Consultando el fichero `/etc/proc/mdstat` para ver su estado:
 
 ```bash
-sudo cat /etc/proc/mdstat
+sudo cat /proc/mdstat
 ```
 
 - Consultando los detalles:
@@ -126,16 +126,44 @@ sudo mdadm --manage /dev/md5 --fail /dev/vdb
 Luego mira el estado con:
 
 ```bash
-cat /etc/proc/mdstat
+cat /proc/mdstat
 ```
+
 Mostrará algo similar a la siguiente imagen donde se observa que el disco esta marcado como fallido:
 
 ![fallovdb]({{ site.baseurl }}/assets/img/TareaRAID5/fallovdb.png)
 
-7. Tarea 7: Una vez marcado como estropeado, lo tenemos que retirar del raid.    
+El fichero se puede seguir visualizando sin problema.
+
+7. Tarea 7: Una vez marcado como estropeado, lo tenemos que retirar del raid.   
+
+Para ello utiliza el siguiente comando:
+
+```bash
+sudo mdadm --manage /dev/md5 --remove /dev/vdb
+``` 
+
+Observamos de nuevo el estado del raid5 y mostrará lo siguiente:
+
+```bash
+cat /etc/proc/mdstat
+```
+
+![removevdb]({{ site.baseurl }}/assets/img/TareaRAID5/removevdb.png)
+
 
 8. Tarea 8: Imaginemos que lo cambiamos por un nuevo disco nuevo (el dispositivo de bloque se llama igual), añádelo al array y 
-comprueba como se sincroniza con el anterior.    
+comprueba como se sincroniza con el anterior. 
+
+Para ello en este caso con un nuevo disco "vde":
+
+```bash
+sudo mdadm --manage /dev/md5 --add /dev/vde
+```
+
+Automáticamente se sincroniza con el raid observa los cambios con:
+
+ 
 
 9. Tarea 9: Añade otro disco como reserva. Vuelve a simular el fallo de un disco y comprueba como automática se realiza la sincronización con el disco de reserva.    
 
