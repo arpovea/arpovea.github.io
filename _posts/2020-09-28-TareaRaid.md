@@ -84,6 +84,18 @@ En la siguiente imagen se pueden ver tanto el estado como los detalles:
 
 3. Tarea 3: Crea un volumen lógico (LVM) de 500MB en el raid5.    
 
+Para esto hay que añadir el RAID5 a los volumenes físicos, crear un grupo de volúmenes que utilize ese dispositivo y luego crear el volumen lógico:
+
+```bash
+sudo pvcreate /dev/md5
+sudo vgcreate tareas /dev/md5
+sudo lvcreate tareas -L 500M -n tarea3
+```
+
+Quedando como en la siguiente imagen:
+
+![Vlogico]({{ site.baseurl }}/assets/img/TareaRAID5/Vlogico.png)
+
 4. Tarea 4: Formatea ese volumen con un sistema de archivo `xfs`.    
 
 5. Tarea 5: Monta el volumen en el directorio `/mnt/raid5` y crea un fichero. ¿Qué tendríamos que hacer para que este punto de montaje sea permanente?.    
