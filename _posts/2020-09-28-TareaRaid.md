@@ -123,7 +123,7 @@ Para que fuera permanente tendrías que incluir este montaje en el fichero `fsta
 
 #### Tarea 6: Marca un disco como estropeado. Muestra el estado del raid para comprobar que un disco falla. ¿Podemos acceder al fichero?.    
 
-Para marcar un disco por ejemplo `vdb` como fallido utiliza:
+Para marcar un disco, por ejemplo `vdb` como fallido utiliza:
 
 ```bash
 sudo mdadm --manage /dev/md5 --fail /dev/vdb
