@@ -50,7 +50,7 @@ sudo apt update && sudo apt install -y mdadm
 
 ## Tareas RAID5
 
-#### Tarea 1: Crea una raid llamado "md5" con los discos que hemos conectado a la máquina. ¿Cuantós discos tienes que conectar? ¿Qué diferencia existe entre el RAID 5 y el RAID1?.    
+#### Tarea 1: Crea una raid llamado "md5" con los discos que hemos conectado a la máquina. ¿Cuántos discos tienes que conectar? ¿Qué diferencia existe entre el RAID 5 y el RAID1?.    
 
 Para el RAID5 hay que conectar 3 discos, es decir tiene en total una capacidad de 2GB, para hacer esto utiliza el siguiente comando:
 
@@ -178,7 +178,7 @@ Obteniendo algo similar a lo siguiente:
 
 ![agregandovde]({{ site.baseurl }}/assets/img/TareaRAID5/agregandovde.png)
 
-#### Tarea 9: Añade otro disco como reserva. Vuelve a simular el fallo de un disco y comprueba como automática se realiza la sincronización con el disco de reserva.
+#### Tarea 9: Añade otro disco como reserva. Vuelve a simular el fallo de un disco y comprueba como automáticamente se realiza la sincronización con el disco de reserva.
 
 Realiza los siguiente comandos para añadir el disco como reserva:
 
