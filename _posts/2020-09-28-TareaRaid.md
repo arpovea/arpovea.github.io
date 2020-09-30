@@ -87,7 +87,7 @@ En la siguiente imagen se pueden ver tanto el estado como los detalles:
 
 ![mdadmstatus]({{ site.baseurl }}/assets/img/TareaRAID5/comprobacionstadoraid.png)
 
-####3.Tarea 3: Crea un volumen lógico (LVM) de 500MB en el RAID5.    
+#### 3.Tarea 3: Crea un volumen lógico (LVM) de 500MB en el RAID5.    
 
 Para esto hay que añadir el RAID5 a los volúmenes físicos, crear un grupo de volúmenes que utilize ese dispositivo y luego crear el volumen lógico:
 
@@ -101,7 +101,7 @@ Quedando como en la siguiente imagen:
 
 ![Vlogico]({{ site.baseurl }}/assets/img/TareaRAID5/Vlogico.png)
 
-####4.Tarea 4: Formatea ese volumen con un sistema de archivo `xfs`.    
+#### 4.Tarea 4: Formatea ese volumen con un sistema de archivo `xfs`.    
 
 Realiza el siguiente comando:
 
@@ -109,7 +109,7 @@ Realiza el siguiente comando:
 sudo mkfs.xfs /dev/tareas/tarea3
 ```
 
-####5.Tarea 5: Monta el volumen en el directorio `/mnt/RAID5` y crea un fichero. ¿Qué tendríamos que hacer para que este punto de montaje sea permanente?.
+#### 5.Tarea 5: Monta el volumen en el directorio `/mnt/RAID5` y crea un fichero. ¿Qué tendríamos que hacer para que este punto de montaje sea permanente?.
 
 Para ello:
 
@@ -121,7 +121,7 @@ touch /mnt/RAID5/fich.txt
 
 Para que fuera permanente tendrías que incluir este montaje en el fichero `fstab`.    
 
-####6.Tarea 6: Marca un disco como estropeado. Muestra el estado del raid para comprobar que un disco falla. ¿Podemos acceder al fichero?.    
+#### 6.Tarea 6: Marca un disco como estropeado. Muestra el estado del raid para comprobar que un disco falla. ¿Podemos acceder al fichero?.    
 
 Para marcar un disco por ejemplo `vdb` como fallido utiliza:
 
@@ -141,7 +141,7 @@ Mostrará algo similar a la siguiente imagen donde se observa que el disco esta 
 
 El fichero se puede seguir visualizando sin problema.
 
-####7.Tarea 7: Una vez marcado como estropeado, lo tenemos que retirar del raid.   
+#### 7.Tarea 7: Una vez marcado como estropeado, lo tenemos que retirar del raid.   
 
 Para ello utiliza el siguiente comando:
 
@@ -158,7 +158,7 @@ cat /etc/proc/mdstat
 ![removevdb]({{ site.baseurl }}/assets/img/TareaRAID5/removevdb.png)
 
 
-####8.Tarea 8: Imaginemos que lo cambiamos por un nuevo disco nuevo (el dispositivo de bloque se llama igual), añádelo al array y 
+#### 8.Tarea 8: Imaginemos que lo cambiamos por un nuevo disco nuevo (el dispositivo de bloque se llama igual), añádelo al array y 
 comprueba como se sincroniza con el anterior. 
 
 Para ello en este caso con un nuevo disco "vde":
@@ -178,7 +178,7 @@ Obteniendo algo similar a lo siguiente:
 
 ![agregandovde]({{ site.baseurl }}/assets/img/TareaRAID5/agregandovde.png)
 
-####9.Tarea 9: Añade otro disco como reserva. Vuelve a simular el fallo de un disco y comprueba como automática se realiza la sincronización con el disco de reserva.
+#### 9.Tarea 9: Añade otro disco como reserva. Vuelve a simular el fallo de un disco y comprueba como automática se realiza la sincronización con el disco de reserva.
 
 Realiza los siguiente comandos para añadir el disco como reserva:
 
@@ -218,7 +218,7 @@ Y luego aumentar el raid a la máxima capacidad disponible con:
 sudo mdadm --grow /dev/md5 -z max
 ```
 
-####10.Tarea 10: Redimensiona el volumen y el sistema de archivo de 500MB al tamaño del raid. 
+#### 10.Tarea 10: Redimensiona el volumen y el sistema de archivo de 500MB al tamaño del raid. 
 
 Con los siguientes comandos podras redimensionar el volumen y luego redimensionar el sistema de ficheros:
 
