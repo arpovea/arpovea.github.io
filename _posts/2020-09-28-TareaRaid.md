@@ -98,9 +98,39 @@ Quedando como en la siguiente imagen:
 
 4. Tarea 4: Formatea ese volumen con un sistema de archivo `xfs`.    
 
-5. Tarea 5: Monta el volumen en el directorio `/mnt/raid5` y crea un fichero. ¿Qué tendríamos que hacer para que este punto de montaje sea permanente?.    
+Realiza el siguiente comando:
+
+```bash
+sudo mkfs.xfs /dev/tareas/tarea3
+```
+
+5. Tarea 5: Monta el volumen en el directorio `/mnt/raid5` y crea un fichero. ¿Qué tendríamos que hacer para que este punto de montaje sea permanente?.
+
+Para ello:
+
+```bash
+mkdir /mnt/raid5
+sudo mount -t xfs /dev/tareas/tarea3 /mnt/raid5
+touch /mnt/raid5/fich.txt
+```
+
+Para que fuera permanente tendrias que incluir este montaje en el fichero `fstab`.    
 
 6. Tarea 6: Marca un disco como estropeado. Muestra el estado del raid para comprobar que un disco falla. ¿Podemos acceder al fichero?.    
+
+Para marcar un disco por ejemplo `vdb` como fallido utiliza:
+
+```bash
+sudo mdadm --manage /dev/md5 --fail /dev/vdb
+```
+Luego mira el estado con:
+
+```bash
+cat /etc/proc/mdstat
+```
+Mostrará algo similar a la siguiente imagen donde se observa que el disco esta marcado como fallido:
+
+![fallovdb]({{ site.baseurl }}/assets/img/TareaRAID5/fallovdb.png)
 
 7. Tarea 7: Una vez marcado como estropeado, lo tenemos que retirar del raid.    
 
