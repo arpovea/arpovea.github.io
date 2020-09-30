@@ -163,7 +163,15 @@ sudo mdadm --manage /dev/md5 --add /dev/vde
 
 Automáticamente se sincroniza con el raid observa los cambios con:
 
- 
+```bash
+lsblk
+cat /proc/mdstat
+```
+
+Obteniendo algo similar a lo siguiente:
+
+![agregandovde]({{ site.baseurl }}/assets/img/TareaRAID5/agregandovde.png)
+
 
 9. Tarea 9: Añade otro disco como reserva. Vuelve a simular el fallo de un disco y comprueba como automática se realiza la sincronización con el disco de reserva.    
 
