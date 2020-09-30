@@ -202,7 +202,7 @@ Como podemos ver en la siguiente imagen el disco pasa de SPARE (S) a activo y el
 
 ![SPAREautilizado]({{ site.baseurl }}/assets/img/TareaRAID5/SPAREautilizado.png)
 
-Como repunte, si quisieras que el disco se agregara como dispositivo adicional para aumentar las dimesiones del raid, después de agregarlo, realiza el siguiente comando:
+Como repunte, si quisieras que el disco se agrege como dispositivo adicional para aumentar las dimesiones del raid, después de agregarlo, realiza el siguiente comando:
 
 ```bash
 sudo mdadm --grow /dev/md5 --raid-devices=4
@@ -214,11 +214,20 @@ Y luego aumentar el raid a la máxima capacidad disponible con:
 sudo mdadm --grow /dev/md5 -z max
 ```
 
-10. Tarea 10: Redimensiona el volumen y el sistema de archivo de 500Mb al tamaño del raid. 
+10. Tarea 10: Redimensiona el volumen y el sistema de archivo de 500MB al tamaño del raid. 
 
 Con los siguientes comandos podras redimensionar el volumen y luego redimensionar el sistema de ficheros:
 
+```bash
+sudo lvextend -L +1.5G /dev/tareas/tarea3 
+sudo xfs_growfs /mnt/raid5/
+```
 
+Recalcar que con `xfs`se puede realizar esta acción en caliente con otros sistemas de ficheros podría ocasionar errores o perdida de datos.
+
+Al finalizar todas las tareas en este orden la orden `lsblk -f` debería mostrar algo así:
+
+![lsblkfinal]({{ site.baseurl }}/assets/img/TareaRAID5/lsblkfinal.png)
 
 ***
     
