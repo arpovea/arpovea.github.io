@@ -158,8 +158,7 @@ cat /etc/proc/mdstat
 ![removevdb]({{ site.baseurl }}/assets/img/TareaRAID5/removevdb.png)
 
 
-#### Tarea 8: Imaginemos que lo cambiamos por un nuevo disco nuevo (el dispositivo de bloque se llama igual), añádelo al array y 
-comprueba como se sincroniza con el anterior. 
+#### Tarea 8: Imaginemos que lo cambiamos por un nuevo disco nuevo (el dispositivo de bloque se llama igual), añádelo al array y comprueba como se sincroniza con el anterior. 
 
 Para ello en este caso con un nuevo disco "vde":
 
